@@ -4,7 +4,6 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
@@ -15,14 +14,14 @@ public class Client {
     static RestTemplate restTemplate = new RestTemplate();
     public static void main(String[] args) {
         String sensorName = "sensor2";
-//        sensorReg(sensorName);
+        sensorReg(sensorName);
         Random random = new Random();
         double maxTemperature = 50.0;
-//        for(int i=0; i<1000; i++){
-//            System.out.println(i);
-//            sendMeasurements(random.nextDouble()*maxTemperature, random.nextBoolean(), sensorName);
-//        }
-//        getMeasurements();
+        for(int i=0; i<500; i++){
+            System.out.println(i);
+            sendMeasurements(random.nextDouble()*maxTemperature, random.nextBoolean(), sensorName);
+        }
+        getMeasurements();
     }
 
     private static void sensorReg(String sensorName) {
